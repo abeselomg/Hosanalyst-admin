@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hosanalyst/pages/home_page.dart';
+import 'package:hosanalyst/pages/game_view_page.dart';
 import './pages/all_games.dart';
 void main() {
   runApp(const MyApp());
@@ -24,7 +24,17 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+        // This makes the visual density adapt to the platform that you run
+        // the app on. For desktop platforms, the controls will be smaller and
+        // closer together (more dense) than on mobile platforms.
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      themeMode: ThemeMode.dark,
       home: const AllGames(),
       debugShowCheckedModeBanner: false,
     );
