@@ -112,7 +112,7 @@ class _SigninState extends State<Signin> {
                                   margin: const EdgeInsets.only(
                                       left: 20, right: 20),
                                   decoration: const BoxDecoration(
-                                      borderRadius: const BorderRadius.all(
+                                      borderRadius: BorderRadius.all(
                                           Radius.circular(10)),
                                       gradient: LinearGradient(
                                         begin: Alignment.topLeft,

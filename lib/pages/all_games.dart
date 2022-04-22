@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'game_detail_page.dart';
 import '../helpers/api_services.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import '../helpers/utils.dart';
 
 class AllGames extends StatefulWidget {
@@ -130,7 +129,7 @@ class _AllGamesState extends State<AllGames> {
                     const SizedBox(
                       height: 10,
                     ),
-                    allApiGames.length == 0
+                    allApiGames.isEmpty
                         ? Expanded(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,

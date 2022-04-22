@@ -33,8 +33,7 @@ class _GameViewPageState extends State<GameViewPage> {
   final TextEditingController _fullhomeTextController = TextEditingController();
   final TextEditingController _fullawayTextController = TextEditingController();
 
-  var _scaffoldKey = GlobalKey<ScaffoldState>();
-  GlobalKey<SliderDrawerState> _key = GlobalKey<SliderDrawerState>();
+  final GlobalKey<SliderDrawerState> _key = GlobalKey<SliderDrawerState>();
   int initialduration = 0;
   late Duration duration;
   Timer? timer;
@@ -87,13 +86,7 @@ class _GameViewPageState extends State<GameViewPage> {
       _playerIn = playerIn;
       _playerOut = playerOut;
     });
-    print({
-      "playerInId": playerIn["id"],
-      "playerOutId": playerOut["id"],
-      "teamId": _teamData["id"],
-      "gameId": widget.gameDetail["id"],
-      "time_of_substitution": _getCurrentTime()
-    });
+
     setGameSubstitution({
       "playerInId": playerIn["id"],
       "playerOutId": playerOut["id"],
@@ -208,7 +201,7 @@ class _GameViewPageState extends State<GameViewPage> {
   void stoptimer() {
     if (mounted) {
       setState(() {
-        duration = Duration(minutes: 0, seconds: 0);
+        duration = const Duration(minutes: 0, seconds: 0);
       });
     }
   }
@@ -240,14 +233,14 @@ class _GameViewPageState extends State<GameViewPage> {
                   "Existing this page before half or full time is not recommended!\n\nAre you sure you want to exit?"),
               actions: [
                 FlatButton(
-                  child: Text("Yes"),
+                  child: const Text("Yes"),
                   onPressed: () {
                     Navigator.pop(context);
                     Navigator.pop(context);
                   },
                 ),
                 FlatButton(
-                  child: Text("No"),
+                  child: const Text("No"),
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -449,7 +442,7 @@ class _GameViewPageState extends State<GameViewPage> {
                               child: Center(
                                 child: Text(
                                   data.toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 30, color: Colors.white54),
                                 ),
                               ),
@@ -471,7 +464,7 @@ class _GameViewPageState extends State<GameViewPage> {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(30),
-                              boxShadow: [BoxShadow(blurRadius: 4)]),
+                              boxShadow: const [BoxShadow(blurRadius: 4)]),
                           child: const Center(
                               child: Icon(
                             Icons.menu_rounded,
