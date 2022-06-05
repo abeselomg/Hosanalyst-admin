@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hosanalyst/pages/game_view_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './pages/all_games.dart';
 import './pages/login_page.dart';
@@ -58,10 +57,9 @@ class _MyAppState extends State<MyApp> {
       },
     );
     // var brightness = SchedulerBinding.instance!.window.platformBrightness;
-    
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Hossanalyst',
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: kPrimaryColor,
@@ -90,6 +88,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: kPrimaryColor,
         accentColor: Colors.white,
         textTheme: TextTheme(),
+        backgroundColor: Color(0xFF262626),
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.

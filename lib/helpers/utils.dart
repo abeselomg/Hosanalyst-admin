@@ -32,8 +32,7 @@ Widget networkImage(imageUrl, double height, double width) {
   );
 }
 
-
-  List attackActions = [
+List attackActions = [
   {"SP": "short pass"},
   {"LP": "long pass"},
   {"Dr": "dribbles"},
@@ -71,3 +70,132 @@ List defenceActions = [
   {"YC": "yellow cards"},
   {"RC": "red cards"},
 ];
+
+List<Map> majorActions = [
+  {"text": "Short Pass", "value": "short pass"},
+  {"text": "Long Pass", "value": "long pass"},
+  {"text": "Dribbles", "value": "dribbles"},
+  {"text": "Assists", "value": "assists"},
+  {"text": "Crosses", "value": "crosses"},
+  {"text": "Goals Scored", "value": "goals scored"},
+  {"text": "Headers On Target", "value": "headers on target"},
+  {"text": "Shots On Target", "value": "shots on target"},
+  {"text": "Shots Off Target", "value": "shots off target"},
+  {"text": "Tackles Won", "value": "tackles won"},
+  {"text": "Interceptions of Long Pass", "value": "interceptions of long pass"},
+  {
+    "text": "Interceptions of Short Pass",
+    "value": "interceptions of short pass"
+  },
+  {"text": "Yellow Cards", "value": "yellow cards"},
+  {"text": "Red Cards", "value": "red cards"}
+];
+
+// overview
+
+List playeroverview = [
+  "goals scored",
+  "short pass",
+  "long pass",
+  "shots on target",
+  "shots off target",
+];
+
+List overview = [
+  "possession",
+  "shots on target",
+  "shots off target",
+  "corners",
+  "yellow cards",
+  "red cards",
+  "off-sides committed"
+];
+
+
+
+List attack = [
+  "short pass",
+  "long pass",
+  "dribbles",
+  "assists",
+  "crosses",
+  "goals scored",
+  "headers on target",
+  "shots on target",
+  "shots off target",
+  "shot accuracy",
+  "fouls received",
+  "free kick",
+  "corners",
+];
+
+List defensive = [
+  "tackles won",
+  "tackles lost",
+  "interceptions of long pass",
+  "interceptions of short pass",
+  "clearance",
+  "crosses against",
+  "corners against",
+  "headers won",
+  "headers lost",
+  "off-sides received",
+  "shots on target received",
+  "shots off target received",
+  "goals conceded",
+  "free kick conceded",
+  "penalties conceded",
+  "defensive moves",
+  "body checks",
+];
+
+List discipline = [
+  "yellow cards",
+  "red cards",
+  "off-sides committed"
+];
+
+
+// TableCalendar(
+//                   onDaySelected: (selectedDay, focusedDay) {
+//                     setState(() {
+//                       _selectedDate = selectedDay;
+//                     });
+//                   },
+//                   locale: 'en_US',
+//                   firstDay: DateTime.utc(2010, 10, 16),
+//                   lastDay: DateTime.utc(2030, 3, 14),
+//                   focusedDay: _selectedDate,
+//                   selectedDayPredicate: (day) {
+//                     return _selectedDate == day;
+//                   },
+//                   calendarStyle: CalendarStyle(
+//                       cellMargin: const EdgeInsets.all(2),
+//                       selectedDecoration: BoxDecoration(
+//                         color: Theme.of(context).primaryColor,
+//                         shape: BoxShape.circle,
+//                       ),
+//                       todayDecoration: const BoxDecoration(
+//                         color: Colors.transparent,
+//                         shape: BoxShape.circle,
+//                       ),
+//                       weekendTextStyle: const TextStyle(
+//                         color: Colors.white,
+//                       )),
+//                   headerStyle: const HeaderStyle(
+//                     formatButtonVisible: false,
+//                     titleCentered: true,
+//                   ),
+//                   shouldFillViewport: true,
+//                   daysOfWeekStyle: const DaysOfWeekStyle(
+//                     weekdayStyle: TextStyle(
+//                       fontWeight: FontWeight.bold,
+//                       fontSize: 14.0,
+//                     ),
+//                     weekendStyle: TextStyle(
+//                       fontWeight: FontWeight.bold,
+//                       fontSize: 14.0,
+//                     ),
+//                   ),
+//                   rowHeight: 30,
+//                 ),

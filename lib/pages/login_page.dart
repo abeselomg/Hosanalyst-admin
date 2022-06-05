@@ -42,8 +42,9 @@ class _SigninState extends State<Signin> {
                 height: MediaQuery.of(context).size.height * 0.9,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: whiteshade,
-                    borderRadius: const BorderRadius.only(
+                    // color: whiteshade,
+                    color:  Theme.of(context).backgroundColor,
+                    borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(45),
                         topRight: Radius.circular(45))),
                 child: Padding(
@@ -112,8 +113,8 @@ class _SigninState extends State<Signin> {
                                   margin: const EdgeInsets.only(
                                       left: 20, right: 20),
                                   decoration: const BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(10)),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
                                       gradient: LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,

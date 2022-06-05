@@ -19,8 +19,9 @@ Future getAllGames(String date) async {
   };
 
   try {
-    http.Response response = await http
-        .get(Uri.parse(baseUrl + "api/v1/all_games?date=$date"), headers: headers);
+    http.Response response = await http.get(
+        Uri.parse(baseUrl + "api/v1/all_games?date=$date"),
+        headers: headers);
 
     if (response.statusCode == 200 || response.statusCode == 201) {
       var gamedata = json.decode(response.body);
@@ -198,7 +199,7 @@ Future updateGameScoreBoard(id, Map<String, dynamic> data) async {
   }
 }
 
-Future setGameSubstitution( Map<String, dynamic> data) async {
+Future setGameSubstitution(Map<String, dynamic> data) async {
   String token = await getToken();
   Map<String, String> headers = {
     "Accept": "application/json",
@@ -212,7 +213,94 @@ Future setGameSubstitution( Map<String, dynamic> data) async {
         headers: headers,
         body: jsonEncode(data));
 
-     
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      var singlegamedata = json.decode(response.body);
+
+      return singlegamedata;
+    } else {
+      return null;
+    }
+  } on Exception {
+    return null;
+  }
+}
+
+Future getPlayerStat({gameId, timeStart, timeEnd, action, teamId, zone}) async {
+  String token = await getToken();
+  String team = teamId == null ? "" : "&teamId=$teamId";
+  String zonevalue = zone == null ? "" : "&zone=$zone";
+
+  Map<String, String> headers = {
+    "Accept": "application/json",
+    'Authorization': "Token $token",
+  };
+  try {
+    http.Response response = await http.get(
+      Uri.parse(baseUrl +
+          "api/v1/action_count_for_individual?gameId=$gameId&timeStart=$timeStart&timeEnd=$timeEnd&action=$action$team$zonevalue"),
+      headers: headers,
+    );
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      var singlegamedata = json.decode(response.body);
+
+      return singlegamedata;
+    } else {
+      return null;
+    }
+  } on Exception {
+    return null;
+  }
+}
+
+Future getTeamsStat({gameId, timeStart, timeEnd, action, zone}) async {
+  String token = await getToken();
+  String time =
+      timeStart == null ? "" : "&timeStart=$timeStart&timeEnd=$timeEnd";
+  String actions = action == null ? "" : "&action=$action";
+  String zonevalue = zone == null ? "" : "&zone=$zone";
+
+  Map<String, String> headers = {
+    "Accept": "application/json",
+    'Authorization': "Token $token",
+  };
+  try {
+    http.Response response = await http.get(
+      Uri.parse(baseUrl +
+          "api/v1/all_action_count_in_timeframe?gameId=$gameId$time$actions$zonevalue"),
+      headers: headers,
+    );
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      var singlegamedata = json.decode(response.body);
+
+      return singlegamedata;
+    } else {
+      return null;
+    }
+  } on Exception {
+    return null;
+  }
+}
+
+Future getPlayerDetail(
+    {gameId, playerId, timeStart, timeEnd, action, zone}) async {
+  String token = await getToken();
+  String time =
+      timeStart == null ? "" : "&timeStart=$timeStart&timeEnd=$timeEnd";
+  String actions = action == null ? "" : "&action=$action";
+  String zonevalue = zone == null ? "" : "&zone=$zone";
+
+  Map<String, String> headers = {
+    "Accept": "application/json",
+    'Authorization': "Token $token",
+  };
+  try {
+    http.Response response = await http.get(
+      Uri.parse(baseUrl +
+          "api/v1/action_count_for_player_detail?gameId=$gameId&playerId=$playerId$time$actions$zonevalue"),
+      headers: headers,
+    );
 
     if (response.statusCode == 200 || response.statusCode == 201) {
       var singlegamedata = json.decode(response.body);
